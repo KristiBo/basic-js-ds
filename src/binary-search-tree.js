@@ -58,19 +58,18 @@ class BinarySearchTree {
   }
 
   find(data) {
-    let currNode = this.head;
+    let currNode = this.head; 
 
-    if (!currNode) return;
-    
-
-    while (data !== currNode.data) {
+    while (currNode) {
+      if (data === currNode.data) return currNode;
+      
       if (data < currNode.data) {
         currNode = currNode.left;
       } else {
         currNode = currNode.right;
       }
     }
-    return currNode;
+    return null;
   }
 
   remove(data) {
